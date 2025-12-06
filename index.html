@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awte Cool Solutions | Expert Repair Services</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        [x-cloak] { display: none !important; }
+        .glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="font-sans text-slate-600 antialiased bg-slate-50" x-data="{ mobileMenu: false, bookingModal: false }">
+
+    <nav class="fixed w-full z-40 glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center text-white text-lg shadow-lg">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-display font-bold text-xl text-slate-900 leading-none">Awte Cool</span>
+                        <span class="text-[10px] uppercase tracking-wider text-brand-600 font-bold mt-0.5">Solutions</span>
+                    </div>
+                </a>
+                
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#services" class="text-sm font-medium text-slate-700 hover:text-brand-600 transition">Services</a>
+                    <a href="#pricing" class="text-sm font-medium text-slate-700 hover:text-brand-600 transition">Pricing</a>
+                    
+                    <a href="tel:+918180984022" class="flex items-center gap-2 text-brand-600 font-bold bg-blue-50 px-4 py-2 rounded-lg hover:bg-blue-100 transition">
+                        <i class="fa-solid fa-phone"></i> 81809 84022
+                    </a>
+
+                    <button @click="bookingModal = true" class="bg-brand-600 hover:bg-brand-700 text-white px-6 py-2.5 rounded-full text-sm font-medium transition shadow-lg shadow-brand-500/30">
+                        Book Repair
+                    </button>
+                </div>
+
+                <button @click="mobileMenu = !mobileMenu" class="md:hidden text-slate-700 p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div x-show="mobileMenu" x-collapse x-cloak class="md:hidden bg-white border-t border-slate-100 shadow-xl">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#services" @click="mobileMenu = false" class="block px-4 py-3 rounded-lg text-slate-700 hover:bg-brand-50 font-medium">Services</a>
+                <a href="#pricing" @click="mobileMenu = false" class="block px-4 py-3 rounded-lg text-slate-700 hover:bg-brand-50 font-medium">Pricing</a>
+                <a href="#contact" @click="mobileMenu = false" class="block px-4 py-3 rounded-lg text-slate-700 hover:bg-brand-50 font-medium">Contact & Map</a>
+                
+                <div class="grid grid-cols-2 gap-3 mt-4">
+                    <a href="tel:+918180984022" class="flex items-center justify-center gap-2 bg-slate-100 text-slate-900 py-3 rounded-lg font-semibold">
+                        <i class="fa-solid fa-phone"></i> Call
+                    </a>
+                    <button @click="bookingModal = true; mobileMenu = false" class="bg-brand-600 text-white py-3 rounded-lg font-semibold">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-white overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50 to-transparent opacity-60 pointer-events-none"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-brand-700 text-xs font-bold uppercase tracking-wider mb-6 border border-blue-100">
+                    <i class="fa-solid fa-circle-check"></i> Pune's #1 Appliance Experts
+                </div>
+                <h1 class="text-5xl lg:text-6xl font-display font-bold text-slate-900 leading-tight mb-6">
+                    Fast & Reliable <br>
+                    <span class="text-brand-600">Appliance Repair</span>
+                </h1>
+                <p class="text-lg text-slate-500 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                    Expert repair for AC, Washing Machines, Geysers & PCBs. We fix it right the first time.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="tel:+918180984022" class="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-full font-semibold transition shadow-xl shadow-brand-500/20 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-phone"></i> Call Now
+                    </a>
+                    <button @click="bookingModal = true" class="bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 px-8 py-4 rounded-full font-semibold transition flex items-center justify-center gap-2">
+                        Book Online
+                    </button>
+                </div>
+            </div>
+            <div class="relative flex justify-center lg:justify-end">
+                <img src="https://awtecoolsolutions.in/images/ac2.jpg" alt="Repair Service" class="w-full max-w-md drop-shadow-2xl relative z-10">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-display font-bold text-slate-900">Services</h2>
+                <p class="mt-2 text-slate-500">We specialize in these repairs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition border border-slate-100 cursor-pointer overflow-hidden group" @click="bookingModal = true">
+                    <div class="h-40 overflow-hidden">
+                        <img src="https://drelectronics.in/assets/images/products/3-main.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="PCB Repair">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-microchip text-orange-500"></i>
+                            <h3 class="text-lg font-bold text-slate-900">PCB Repair</h3>
+                        </div>
+                        <p class="text-sm text-slate-500">Chip-level repair for Inverter AC & Washing Machines.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition border border-slate-100 cursor-pointer overflow-hidden group" @click="bookingModal = true">
+                    <div class="h-40 overflow-hidden">
+                        <img src="https://img500.exportersindia.com/product_images/bc-500/2023/4/8624164/split-ac-maintenance-services-1680861131-6838875.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="AC Repair">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-snowflake text-brand-600"></i>
+                            <h3 class="text-lg font-bold text-slate-900">AC Repair</h3>
+                        </div>
+                        <p class="text-sm text-slate-500">Installation, Gas, Cleaning & Copper Piping.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition border border-slate-100 cursor-pointer overflow-hidden group" @click="bookingModal = true">
+                    <div class="h-40 overflow-hidden">
+                        <img src="https://quickfixs.com/wp-content/uploads/2024/12/d0fe63a9-ea88-4fc3-ac69-b379ea5b2498.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Washing Machine">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-shirt text-purple-600"></i>
+                            <h3 class="text-lg font-bold text-slate-900">Washing Machine</h3>
+                        </div>
+                        <p class="text-sm text-slate-500">Motor, Timer, Capacitor & Drum issues.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition border border-slate-100 cursor-pointer overflow-hidden group" @click="bookingModal = true">
+                    <div class="h-40 overflow-hidden">
+                        <img src="https://5.imimg.com/data5/PH/YC/BF/SELLER-108163421/fridge-repair-service-500x500.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Appliance Repair">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-plug text-green-600"></i>
+                            <h3 class="text-lg font-bold text-slate-900">Fridge & Geyser</h3>
+                        </div>
+                        <p class="text-sm text-slate-500">Compressor, Gas, Heating Element & Thermostat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 bg-white" x-data="{ activeTab: 'ac' }">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-display font-bold text-slate-900">Pricing Card</h2>
+            </div>
+
+            <div class="flex overflow-x-auto scrollbar-hide space-x-2 mb-8 pb-2 justify-center">
+                <button @click="activeTab = 'ac'" :class="activeTab === 'ac' ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'" class="whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition">AC</button>
+                <button @click="activeTab = 'wm'" :class="activeTab === 'wm' ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'" class="whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition">Washing Machine</button>
+                <button @click="activeTab = 'fridge'" :class="activeTab === 'fridge' ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'" class="whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition">Fridge</button>
+                <button @click="activeTab = 'pcb'" :class="activeTab === 'pcb' ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'" class="whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition">PCB & Other</button>
+            </div>
+
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                <div x-show="activeTab === 'ac'" class="divide-y divide-slate-100">
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">AC Servicing</span> <span class="font-bold text-brand-600">₹599</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Gas Charging (Full)</span> <span class="font-bold text-brand-600">₹2500</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Split AC Installation</span> <span class="font-bold text-brand-600">₹1399</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Split AC Uninstallation</span> <span class="font-bold text-brand-600">₹629</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Window AC Installation</span> <span class="font-bold text-brand-600">₹749</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Window AC Uninstallation</span> <span class="font-bold text-brand-600">₹629</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Copper Piping (per mtr)</span> <span class="font-bold text-brand-600">₹1100</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Water Leak / Noise</span> <span class="font-bold text-brand-600">₹469+</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Visit Charge</span> <span class="font-bold text-brand-600">₹299</span></div>
+                </div>
+
+                <div x-show="activeTab === 'wm'" class="divide-y divide-slate-100" x-cloak>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Servicing</span> <span class="font-bold text-brand-600">₹700</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Spin Motor Repair</span> <span class="font-bold text-brand-600">₹3000</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Capacitor Change</span> <span class="font-bold text-brand-600">₹1300</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Timer Change</span> <span class="font-bold text-brand-600">₹155</span></div>
+                </div>
+
+                <div x-show="activeTab === 'fridge'" class="divide-y divide-slate-100" x-cloak>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Gas Charging</span> <span class="font-bold text-brand-600">₹3200</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Timer / Thermal Fuse</span> <span class="font-bold text-brand-600">₹2650</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Fan Motor</span> <span class="font-bold text-brand-600">₹2000</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Relay / OLP</span> <span class="font-bold text-brand-600">₹1100</span></div>
+                </div>
+
+                <div x-show="activeTab === 'pcb'" class="divide-y divide-slate-100" x-cloak>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Inverter AC PCB</span> <span class="text-xs bg-slate-100 px-2 py-1 rounded">On Inspection</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Washing Machine PCB</span> <span class="text-xs bg-slate-100 px-2 py-1 rounded">On Inspection</span></div>
+                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Geyser Repair</span> <span class="text-xs bg-slate-100 px-2 py-1 rounded">On Inspection</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-slate-900 text-slate-400">
+        <div class="w-full h-80 grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition duration-500">
+            <iframe 
+                src="https://maps.google.com/maps?q=Awte+Cool+Solutions+Kondhwa+Pune&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                class="w-full h-full border-0" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <div class="py-12 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Awte Cool Solutions</h3>
+                    <p class="text-sm">Professional home appliance repair in Pune, Kondhwa, Wanowrie & Hadapsar.</p>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Contact Us</h3>
+                    <ul class="text-sm space-y-3">
+                        <li><a href="tel:+918180984022" class="hover:text-white transition"><i class="fa-solid fa-phone mr-2"></i> +91 8180984022</a></li>
+                        <li><a href="https://wa.me/918180984022" class="hover:text-white transition"><i class="fa-brands fa-whatsapp mr-2"></i> +91 8180984022</a></li>
+                        <li><a href="mailto:awtecoolsolutionsandpcbrepair@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope mr-2"></i> Email Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">We Serve</h3>
+                    <p class="text-sm">Kondhwa, Wanowrie, NIBM, Undri, Pisoli, Hadapsar, Camp, Bibwewadi, Katraj.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12 text-xs">
+                © 2025 Awte Cool Solutions & PCB Repair.
+            </div>
+        </div>
+    </footer>
+
+    <div x-show="bookingModal" x-cloak class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm transition-opacity" @click="bookingModal = false"></div>
+        <div class="flex min-h-full items-center justify-center p-4">
+            <div class="relative bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden">
+                <div class="px-6 py-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-slate-900">Book Service</h3>
+                        <button @click="bookingModal = false" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-xl"></i></button>
+                    </div>
+                    
+                    <div x-data="{ name: '', type: 'AC Repair' }">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Your Name <span class="text-red-500">*</span></label>
+                                <input x-model="name" type="text" class="w-full rounded-lg border border-slate-300 px-4 py-2.5 outline-none focus:border-brand-600" placeholder="Enter Name (Required)">
+                                <p x-show="name.length === 0" class="text-xs text-red-500 mt-1">Please enter your name to proceed.</p>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Service</label>
+                                <select x-model="type" class="w-full rounded-lg border border-slate-300 px-4 py-2.5 outline-none focus:border-brand-600 bg-white">
+                                    <option>AC Repair</option>
+                                    <option>PCB Repair</option>
+                                    <option>Washing Machine</option>
+                                    <option>Refrigerator</option>
+                                    <option>Geyser</option>
+                                </select>
+                            </div>
+                            
+                            <template x-if="name.length > 0">
+                                <a :href="`https://wa.me/918180984022?text=Hi, I want to book *${type}*. My Name is ${name}.`" target="_blank"
+                                   class="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-lg transition">
+                                   <i class="fa-brands fa-whatsapp mr-2"></i> Book via WhatsApp
+                                </a>
+                            </template>
+
+                            <template x-if="name.length === 0">
+                                <button disabled class="block w-full text-center bg-green-300 text-white font-bold py-3 rounded-lg cursor-not-allowed">
+                                   <i class="fa-brands fa-whatsapp mr-2"></i> Book via WhatsApp
+                                </button>
+                            </template>
+
+                            <div class="text-center text-sm text-slate-500">OR</div>
+                            <a href="tel:+918180984022" class="block w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold py-3 rounded-lg transition">
+                                <i class="fa-solid fa-phone mr-2"></i> Call Directly
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/918180984022" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-green-500/40 transition hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+</body>
+</html>
