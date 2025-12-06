@@ -40,7 +40,7 @@
         .scrollbar-hide::-webkit-scrollbar { display: none; }
     </style>
 </head>
-<body class="font-sans text-slate-600 antialiased bg-slate-50" x-data="{ mobileMenu: false, bookingModal: false }">
+<body class="font-sans text-slate-600 antialiased bg-slate-50" x-data="{ mobileMenu: false }">
 
     <nav class="fixed w-full z-40 glass transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,9 +63,9 @@
                         <i class="fa-solid fa-phone"></i> 81809 84022
                     </a>
 
-                    <button @click="bookingModal = true" class="bg-brand-600 hover:bg-brand-700 text-white px-6 py-2.5 rounded-full text-sm font-medium transition shadow-lg shadow-brand-500/30">
+                    <a href="https://wa.me/918180984022?text=I would like to book an appliance repair service." class="bg-brand-600 hover:bg-brand-700 text-white px-6 py-2.5 rounded-full text-sm font-medium transition shadow-lg shadow-brand-500/30" target="_blank">
                         Book Repair
-                    </button>
+                    </a>
                 </div>
 
                 <button @click="mobileMenu = !mobileMenu" class="md:hidden text-slate-700 p-2">
@@ -84,9 +84,9 @@
                     <a href="tel:+918180984022" class="flex items-center justify-center gap-2 bg-slate-100 text-slate-900 py-3 rounded-lg font-semibold">
                         <i class="fa-solid fa-phone"></i> Call
                     </a>
-                    <button @click="bookingModal = true; mobileMenu = false" class="bg-brand-600 text-white py-3 rounded-lg font-semibold">
+                    <a href="https://wa.me/918180984022?text=I would like to book an appliance repair service." target="_blank" class="bg-brand-600 text-white py-3 rounded-lg font-semibold">
                         Book Now
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -111,9 +111,9 @@
                     <a href="tel:+918180984022" class="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-full font-semibold transition shadow-xl shadow-brand-500/20 flex items-center justify-center gap-2">
                         <i class="fa-solid fa-phone"></i> Call Now
                     </a>
-                    <button @click="bookingModal = true" class="bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 px-8 py-4 rounded-full font-semibold transition flex items-center justify-center gap-2">
+                    <a href="https://wa.me/918180984022?text=I would like to book an appliance repair service." target="_blank" class="bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 px-8 py-4 rounded-full font-semibold transition flex items-center justify-center gap-2">
                         Book Online
-                    </button>
+                    </a>
                 </div>
             </div>
             <div class="relative flex justify-center lg:justify-end">
@@ -131,7 +131,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition border border-slate-100 cursor-pointer overflow-hidden group" @click="bookingModal = true">
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition border border-slate-100 cursor-pointer overflow-hidden group">
                     <div class="h-40 overflow-hidden">
                         <img src="https://drelectronics.in/assets/images/products/3-main.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="PCB Repair">
                     </div>
@@ -144,7 +144,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition border border-slate-100 cursor-pointer overflow-hidden group" @click="bookingModal = true">
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition border border-slate-100 cursor-pointer overflow-hidden group">
                     <div class="h-40 overflow-hidden">
                         <img src="https://img500.exportersindia.com/product_images/bc-500/2023/4/8624164/split-ac-maintenance-services-1680861131-6838875.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="AC Repair">
                     </div>
@@ -157,7 +157,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition border border-slate-100 cursor-pointer overflow-hidden group" @click="bookingModal = true">
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition border border-slate-100 cursor-pointer overflow-hidden group">
                     <div class="h-40 overflow-hidden">
                         <img src="https://quickfixs.com/wp-content/uploads/2024/12/d0fe63a9-ea88-4fc3-ac69-b379ea5b2498.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Washing Machine">
                     </div>
@@ -170,7 +170,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition border border-slate-100 cursor-pointer overflow-hidden group" @click="bookingModal = true">
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition border border-slate-100 cursor-pointer overflow-hidden group">
                     <div class="h-40 overflow-hidden">
                         <img src="https://5.imimg.com/data5/PH/YC/BF/SELLER-108163421/fridge-repair-service-500x500.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Appliance Repair">
                     </div>
@@ -211,154 +211,241 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div x-show="activeTab === 'ac'" class="bg-white rounded-2xl shadow-xl border border-blue-100 p-6 lg:p-8 col-span-1 lg:col-span-3">
                     <h3 class="text-2xl font-display font-bold text-brand-600 mb-6 border-b pb-4">Air Conditioner Services</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 sm:gap-6">
+                    <div class="grid grid-cols-1 gap-4"> 
                         
-                        <div class="flex flex-col p-4 bg-blue-50 rounded-xl border border-blue-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-hand-sparkles text-brand-500"></i> AC Servicing
-                            </span>
-                            <span class="font-bold text-2xl text-brand-700">₹599</span>
+                        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-hand-sparkles text-brand-500"></i> AC Servicing
+                                </span>
+                                <span class="font-bold text-xl text-brand-700">₹599</span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book AC Servicing (₹599)." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-28">
+                                <i class="fa-brands fa-whatsapp"></i> Book Now
+                            </a>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-fire-extinguisher text-orange-500"></i> Gas Charging (Full)
+                                </span>
+                                <span class="font-bold text-xl text-brand-700">₹2500</span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book AC Gas Charging (Full - ₹2500)." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-28">
+                                <i class="fa-brands fa-whatsapp"></i> Book Now
+                            </a>
                         </div>
                         
-                        <div class="flex flex-col p-4 bg-blue-50 rounded-xl border border-blue-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-fire-extinguisher text-orange-500"></i> Gas Charging (Full)
-                            </span>
-                            <span class="font-bold text-2xl text-brand-700">₹2500</span>
-                        </div>
-                        
-                        <div class="flex flex-col p-4 bg-blue-50 rounded-xl border border-blue-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-window-maximize text-green-600"></i> Split AC Installation
-                            </span>
-                            <span class="font-bold text-2xl text-brand-700">₹1399</span>
+                        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-window-maximize text-green-600"></i> Split AC Installation
+                                </span>
+                                <span class="font-bold text-xl text-brand-700">₹1399</span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book Split AC Installation (₹1399)." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-28">
+                                <i class="fa-brands fa-whatsapp"></i> Book Now
+                            </a>
                         </div>
 
-                        <div class="flex flex-col p-4 bg-blue-50 rounded-xl border border-blue-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-window-restore text-red-500"></i> Split AC Uninstallation
-                            </span>
-                            <span class="font-bold text-2xl text-brand-700">₹629</span>
+                        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-window-restore text-red-500"></i> Split AC Uninstallation
+                                </span>
+                                <span class="font-bold text-xl text-brand-700">₹629</span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book Split AC Uninstallation (₹629)." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-28">
+                                <i class="fa-brands fa-whatsapp"></i> Book Now
+                            </a>
                         </div>
 
-                        <div class="flex flex-col p-4 bg-blue-50 rounded-xl border border-blue-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-wrench text-amber-600"></i> Copper Piping (per mtr)
-                            </span>
-                            <span class="font-bold text-2xl text-brand-700">₹1100</span>
+                        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-wrench text-amber-600"></i> Copper Piping (per mtr)
+                                </span>
+                                <span class="font-bold text-xl text-brand-700">₹1100</span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book Copper Piping (per mtr - ₹1100)." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-28">
+                                <i class="fa-brands fa-whatsapp"></i> Book Now
+                            </a>
                         </div>
 
-                        <div class="flex flex-col p-4 bg-blue-50 rounded-xl border border-blue-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-search-location text-brand-500"></i> Visit / Inspection Charge
-                            </span>
-                            <span class="font-bold text-2xl text-brand-700">₹299</span>
+                        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-search-location text-brand-500"></i> Visit / Inspection Charge
+                                </span>
+                                <span class="font-bold text-xl text-brand-700">₹299</span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book a Service Inspection/Visit (₹299)." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-28">
+                                <i class="fa-brands fa-whatsapp"></i> Book Now
+                            </a>
                         </div>
                         
-                        <div class="sm:col-span-2 lg:col-span-3 pt-4 border-t border-blue-200 mt-4">
+                        <div class="pt-4 border-t border-blue-200 mt-4 flex justify-between items-center flex-wrap gap-3">
                             <p class="text-sm text-slate-500">
                                 <i class="fa-solid fa-info-circle mr-2 text-brand-500"></i>
                                 Water Leak / Noise Issues are assessed from <span class="font-bold text-slate-700">₹469+</span> after inspection charge.
                             </p>
+                            <a href="https://wa.me/918180984022?text=I would like to book AC Leak/Noise Issue inspection." target="_blank" class="bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition flex-shrink-0 flex items-center gap-1">
+                                <i class="fa-solid fa-calendar-check"></i> Book Repair
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div x-show="activeTab === 'wm'" class="bg-white rounded-2xl shadow-xl border border-purple-100 p-6 lg:p-8 col-span-1 lg:col-span-3" x-cloak>
                     <h3 class="text-2xl font-display font-bold text-purple-600 mb-6 border-b pb-4">Washing Machine Services</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 sm:gap-6">
+                    <div class="grid grid-cols-1 gap-4">
                         
-                        <div class="flex flex-col p-4 bg-purple-50 rounded-xl border border-purple-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-shirt text-purple-600"></i> Servicing
-                            </span>
-                            <span class="font-bold text-2xl text-purple-700">₹700</span>
+                        <div class="flex items-center justify-between p-4 bg-purple-50 rounded-xl border border-purple-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-shirt text-purple-600"></i> Servicing
+                                </span>
+                                <span class="font-bold text-xl text-purple-700">₹700</span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book Washing Machine Servicing (₹700)." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-28">
+                                <i class="fa-brands fa-whatsapp"></i> Book Now
+                            </a>
                         </div>
                         
-                        <div class="flex flex-col p-4 bg-purple-50 rounded-xl border border-purple-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-gears text-slate-500"></i> Spin Motor Repair
-                            </span>
-                            <span class="font-bold text-2xl text-purple-700">₹3000</span>
+                        <div class="flex items-center justify-between p-4 bg-purple-50 rounded-xl border border-purple-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-gears text-slate-500"></i> Spin Motor Repair
+                                </span>
+                                <span class="font-bold text-xl text-purple-700">₹3000</span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book Washing Machine Spin Motor Repair (₹3000)." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-28">
+                                <i class="fa-brands fa-whatsapp"></i> Book Now
+                            </a>
                         </div>
                         
-                        <div class="flex flex-col p-4 bg-purple-50 rounded-xl border border-purple-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-bolt text-yellow-500"></i> Capacitor Change
-                            </span>
-                            <span class="font-bold text-2xl text-purple-700">₹1300</span>
+                        <div class="flex items-center justify-between p-4 bg-purple-50 rounded-xl border border-purple-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-bolt text-yellow-500"></i> Capacitor Change
+                                </span>
+                                <span class="font-bold text-xl text-purple-700">₹1300</span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book Washing Machine Capacitor Change (₹1300)." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-28">
+                                <i class="fa-brands fa-whatsapp"></i> Book Now
+                            </a>
                         </div>
 
-                        <div class="flex flex-col p-4 bg-purple-50 rounded-xl border border-purple-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-clock text-blue-500"></i> Timer Change
-                            </span>
-                            <span class="font-bold text-2xl text-purple-700">₹155</span>
+                        <div class="flex items-center justify-between p-4 bg-purple-50 rounded-xl border border-purple-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-clock text-blue-500"></i> Timer Change
+                                </span>
+                                <span class="font-bold text-xl text-purple-700">₹155</span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book Washing Machine Timer Change (₹155)." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-28">
+                                <i class="fa-brands fa-whatsapp"></i> Book Now
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div x-show="activeTab === 'fridge'" class="bg-white rounded-2xl shadow-xl border border-green-100 p-6 lg:p-8 col-span-1 lg:col-span-3" x-cloak>
                     <h3 class="text-2xl font-display font-bold text-green-600 mb-6 border-b pb-4">Refrigerator & Geyser Services</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 sm:gap-6">
+                    <div class="grid grid-cols-1 gap-4">
                         
-                        <div class="flex flex-col p-4 bg-green-50 rounded-xl border border-green-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-fire-extinguisher text-orange-500"></i> Fridge Gas Charging
-                            </span>
-                            <span class="font-bold text-2xl text-green-700">₹3200</span>
+                        <div class="flex items-center justify-between p-4 bg-green-50 rounded-xl border border-green-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-fire-extinguisher text-orange-500"></i> Fridge Gas Charging
+                                </span>
+                                <span class="font-bold text-xl text-green-700">₹3200</span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book Fridge Gas Charging (₹3200)." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-28">
+                                <i class="fa-brands fa-whatsapp"></i> Book Now
+                            </a>
                         </div>
                         
-                        <div class="flex flex-col p-4 bg-green-50 rounded-xl border border-green-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-microchip text-slate-500"></i> Fridge Timer / Thermal Fuse
-                            </span>
-                            <span class="font-bold text-2xl text-green-700">₹2650</span>
+                        <div class="flex items-center justify-between p-4 bg-green-50 rounded-xl border border-green-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-microchip text-slate-500"></i> Fridge Timer / Thermal Fuse
+                                </span>
+                                <span class="font-bold text-xl text-green-700">₹2650</span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book Fridge Timer/Fuse Repair (₹2650)." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-28">
+                                <i class="fa-brands fa-whatsapp"></i> Book Now
+                            </a>
                         </div>
                         
-                        <div class="flex flex-col p-4 bg-green-50 rounded-xl border border-green-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-wind text-cyan-500"></i> Fridge Fan Motor
-                            </span>
-                            <span class="font-bold text-2xl text-green-700">₹2000</span>
+                        <div class="flex items-center justify-between p-4 bg-green-50 rounded-xl border border-green-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-wind text-cyan-500"></i> Fridge Fan Motor
+                                </span>
+                                <span class="font-bold text-xl text-green-700">₹2000</span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book Fridge Fan Motor Repair (₹2000)." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-28">
+                                <i class="fa-brands fa-whatsapp"></i> Book Now
+                            </a>
                         </div>
 
-                        <div class="flex flex-col p-4 bg-green-50 rounded-xl border border-green-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-bolt text-yellow-500"></i> Fridge Relay / OLP
-                            </span>
-                            <span class="font-bold text-2xl text-green-700">₹1100</span>
+                        <div class="flex items-center justify-between p-4 bg-green-50 rounded-xl border border-green-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-bolt text-yellow-500"></i> Fridge Relay / OLP
+                                </span>
+                                <span class="font-bold text-xl text-green-700">₹1100</span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book Fridge Relay/OLP Change (₹1100)." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-28">
+                                <i class="fa-brands fa-whatsapp"></i> Book Now
+                            </a>
                         </div>
                         
-                        <div class="flex flex-col p-4 bg-green-50 rounded-xl border border-green-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-plug text-red-600"></i> Geyser Repair
-                            </span>
-                            <span class="font-bold text-2xl text-green-700 text-sm">On Inspection</span>
+                        <div class="flex items-center justify-between p-4 bg-green-50 rounded-xl border border-green-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-plug text-red-600"></i> Geyser Repair
+                                </span>
+                                <span class="font-bold text-xl text-green-700 text-sm">On Inspection</span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book Geyser Repair (Inspection required)." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-28">
+                                <i class="fa-brands fa-whatsapp"></i> Book Now
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div x-show="activeTab === 'pcb'" class="bg-white rounded-2xl shadow-xl border border-orange-100 p-6 lg:p-8 col-span-1 lg:col-span-3" x-cloak>
                     <h3 class="text-2xl font-display font-bold text-orange-600 mb-6 border-b pb-4">Specialized PCB & Other Services</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 sm:gap-6">
+                    <div class="grid grid-cols-1 gap-4">
                         
-                        <div class="flex flex-col p-4 bg-orange-50 rounded-xl border border-orange-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-microchip text-orange-500"></i> Inverter AC PCB Repair
-                            </span>
-                            <span class="font-bold text-xl text-orange-700">
-                                <span class="text-sm bg-orange-100 px-3 py-1 rounded-full font-bold">Quoted After Inspection</span>
-                            </span>
+                        <div class="flex items-center justify-between p-4 bg-orange-50 rounded-xl border border-orange-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-microchip text-orange-500"></i> Inverter AC PCB Repair
+                                </span>
+                                <span class="font-bold text-xl text-orange-700">
+                                    <span class="text-sm bg-orange-100 px-3 py-1 rounded-full font-bold">Quoted After Inspection</span>
+                                </span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book Inverter AC PCB Repair inspection." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-36">
+                                <i class="fa-brands fa-whatsapp"></i> Book Inspection
+                            </a>
                         </div>
                         
-                        <div class="flex flex-col p-4 bg-orange-50 rounded-xl border border-orange-200">
-                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-bolt text-yellow-500"></i> Washing Machine PCB Repair
-                            </span>
-                            <span class="font-bold text-xl text-orange-700">
-                                <span class="text-sm bg-orange-100 px-3 py-1 rounded-full font-bold">Quoted After Inspection</span>
-                            </span>
+                        <div class="flex items-center justify-between p-4 bg-orange-50 rounded-xl border border-orange-200">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-bolt text-yellow-500"></i> Washing Machine PCB Repair
+                                </span>
+                                <span class="font-bold text-xl text-orange-700">
+                                    <span class="text-sm bg-orange-100 px-3 py-1 rounded-full font-bold">Quoted After Inspection</span>
+                                </span>
+                            </div>
+                            <a href="https://wa.me/918180984022?text=I would like to book Washing Machine PCB Repair inspection." target="_blank" class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center flex items-center justify-center gap-1 flex-shrink-0 w-36">
+                                <i class="fa-brands fa-whatsapp"></i> Book Inspection
+                            </a>
                         </div>
 
                     </div>
@@ -407,58 +494,6 @@
             </div>
         </div>
     </footer>
-
-    <div x-show="bookingModal" x-cloak class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm transition-opacity" @click="bookingModal = false"></div>
-        <div class="flex min-h-full items-center justify-center p-4">
-            <div class="relative bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden">
-                <div class="px-6 py-6">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-xl font-bold text-slate-900">Book Service</h3>
-                        <button @click="bookingModal = false" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-xl"></i></button>
-                    </div>
-                    
-                    <div x-data="{ name: '', type: 'AC Repair' }">
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Your Name <span class="text-red-500">*</span></label>
-                                <input x-model="name" type="text" class="w-full rounded-lg border border-slate-300 px-4 py-2.5 outline-none focus:border-brand-600" placeholder="Enter Name (Required)">
-                                <p x-show="name.length === 0" class="text-xs text-red-500 mt-1">Please enter your name to proceed.</p>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Service</label>
-                                <select x-model="type" class="w-full rounded-lg border border-slate-300 px-4 py-2.5 outline-none focus:border-brand-600 bg-white">
-                                    <option>AC Repair</option>
-                                    <option>PCB Repair</option>
-                                    <option>Washing Machine</option>
-                                    <option>Refrigerator</option>
-                                    <option>Geyser</option>
-                                </select>
-                            </div>
-                            
-                            <template x-if="name.length > 0">
-                                <a :href="`https://wa.me/918180984022?text=Hi, I want to book *${type}*. My Name is ${name}.`" target="_blank"
-                                   class="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-lg transition">
-                                   <i class="fa-brands fa-whatsapp mr-2"></i> Book via WhatsApp
-                                </a>
-                            </template>
-
-                            <template x-if="name.length === 0">
-                                <button disabled class="block w-full text-center bg-green-300 text-white font-bold py-3 rounded-lg cursor-not-allowed">
-                                   <i class="fa-brands fa-whatsapp mr-2"></i> Book via WhatsApp
-                                </button>
-                            </template>
-
-                            <div class="text-center text-sm text-slate-500">OR</div>
-                            <a href="tel:+918180984022" class="block w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold py-3 rounded-lg transition">
-                                <i class="fa-solid fa-phone mr-2"></i> Call Directly
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <a href="https://wa.me/918180984022" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-green-500/40 transition hover:scale-110">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
