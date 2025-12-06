@@ -19,12 +19,7 @@
                 extend: {
                     colors: {
                         brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            900: '#1e3a8a',
+                            50: '#eff6ff', 100: '#dbeafe', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 900: '#1e3a8a',
                         },
                     },
                     fontFamily: {
@@ -135,6 +130,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
                 <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition border border-slate-100 cursor-pointer overflow-hidden group" @click="bookingModal = true">
                     <div class="h-40 overflow-hidden">
                         <img src="https://drelectronics.in/assets/images/products/3-main.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="PCB Repair">
@@ -190,55 +186,192 @@
         </div>
     </section>
 
-    <section id="pricing" class="py-20 bg-white" x-data="{ activeTab: 'ac' }">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-display font-bold text-slate-900">Pricing Card</h2>
+    <section id="pricing" class="py-20 bg-slate-50" x-data="{ activeTab: 'ac' }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-display font-bold text-slate-900">Transparent Service Pricing</h2>
+                <p class="mt-2 text-slate-500 max-w-2xl mx-auto">Find the fixed rates for our most common repair and maintenance services. All prices are for service only; part costs are separate.</p>
             </div>
 
-            <div class="flex overflow-x-auto scrollbar-hide space-x-2 mb-8 pb-2 justify-center">
-                <button @click="activeTab = 'ac'" :class="activeTab === 'ac' ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'" class="whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition">AC</button>
-                <button @click="activeTab = 'wm'" :class="activeTab === 'wm' ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'" class="whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition">Washing Machine</button>
-                <button @click="activeTab = 'fridge'" :class="activeTab === 'fridge' ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'" class="whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition">Fridge</button>
-                <button @click="activeTab = 'pcb'" :class="activeTab === 'pcb' ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'" class="whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition">PCB & Other</button>
+            <div class="flex overflow-x-auto scrollbar-hide space-x-3 mb-8 pb-2 justify-center">
+                <button @click="activeTab = 'ac'" :class="activeTab === 'ac' ? 'bg-brand-600 text-white shadow-md shadow-brand-500/20' : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'" class="whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition">
+                    <i class="fa-solid fa-snowflake mr-2"></i> AC
+                </button>
+                <button @click="activeTab = 'wm'" :class="activeTab === 'wm' ? 'bg-brand-600 text-white shadow-md shadow-brand-500/20' : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'" class="whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition">
+                    <i class="fa-solid fa-shirt mr-2"></i> Washing Machine
+                </button>
+                <button @click="activeTab = 'fridge'" :class="activeTab === 'fridge' ? 'bg-brand-600 text-white shadow-md shadow-brand-500/20' : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'" class="whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition">
+                    <i class="fa-solid fa-cube mr-2"></i> Fridge
+                </button>
+                <button @click="activeTab = 'pcb'" :class="activeTab === 'pcb' ? 'bg-brand-600 text-white shadow-md shadow-brand-500/20' : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'" class="whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition">
+                    <i class="fa-solid fa-microchip mr-2"></i> PCB & Other
+                </button>
             </div>
 
-            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
-                <div x-show="activeTab === 'ac'" class="divide-y divide-slate-100">
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">AC Servicing</span> <span class="font-bold text-brand-600">₹599</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Gas Charging (Full)</span> <span class="font-bold text-brand-600">₹2500</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Split AC Installation</span> <span class="font-bold text-brand-600">₹1399</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Split AC Uninstallation</span> <span class="font-bold text-brand-600">₹629</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Window AC Installation</span> <span class="font-bold text-brand-600">₹749</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Window AC Uninstallation</span> <span class="font-bold text-brand-600">₹629</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Copper Piping (per mtr)</span> <span class="font-bold text-brand-600">₹1100</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Water Leak / Noise</span> <span class="font-bold text-brand-600">₹469+</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Visit Charge</span> <span class="font-bold text-brand-600">₹299</span></div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div x-show="activeTab === 'ac'" class="bg-white rounded-2xl shadow-xl border border-blue-100 p-6 lg:p-8 col-span-1 lg:col-span-3">
+                    <h3 class="text-2xl font-display font-bold text-brand-600 mb-6 border-b pb-4">Air Conditioner Services</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 sm:gap-6">
+                        
+                        <div class="flex flex-col p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-hand-sparkles text-brand-500"></i> AC Servicing
+                            </span>
+                            <span class="font-bold text-2xl text-brand-700">₹599</span>
+                        </div>
+                        
+                        <div class="flex flex-col p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-fire-extinguisher text-orange-500"></i> Gas Charging (Full)
+                            </span>
+                            <span class="font-bold text-2xl text-brand-700">₹2500</span>
+                        </div>
+                        
+                        <div class="flex flex-col p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-window-maximize text-green-600"></i> Split AC Installation
+                            </span>
+                            <span class="font-bold text-2xl text-brand-700">₹1399</span>
+                        </div>
+
+                        <div class="flex flex-col p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-window-restore text-red-500"></i> Split AC Uninstallation
+                            </span>
+                            <span class="font-bold text-2xl text-brand-700">₹629</span>
+                        </div>
+
+                        <div class="flex flex-col p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-wrench text-amber-600"></i> Copper Piping (per mtr)
+                            </span>
+                            <span class="font-bold text-2xl text-brand-700">₹1100</span>
+                        </div>
+
+                        <div class="flex flex-col p-4 bg-blue-50 rounded-xl border border-blue-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-search-location text-brand-500"></i> Visit / Inspection Charge
+                            </span>
+                            <span class="font-bold text-2xl text-brand-700">₹299</span>
+                        </div>
+                        
+                        <div class="sm:col-span-2 lg:col-span-3 pt-4 border-t border-blue-200 mt-4">
+                            <p class="text-sm text-slate-500">
+                                <i class="fa-solid fa-info-circle mr-2 text-brand-500"></i>
+                                Water Leak / Noise Issues are assessed from <span class="font-bold text-slate-700">₹469+</span> after inspection charge.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
-                <div x-show="activeTab === 'wm'" class="divide-y divide-slate-100" x-cloak>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Servicing</span> <span class="font-bold text-brand-600">₹700</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Spin Motor Repair</span> <span class="font-bold text-brand-600">₹3000</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Capacitor Change</span> <span class="font-bold text-brand-600">₹1300</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Timer Change</span> <span class="font-bold text-brand-600">₹155</span></div>
+                <div x-show="activeTab === 'wm'" class="bg-white rounded-2xl shadow-xl border border-purple-100 p-6 lg:p-8 col-span-1 lg:col-span-3" x-cloak>
+                    <h3 class="text-2xl font-display font-bold text-purple-600 mb-6 border-b pb-4">Washing Machine Services</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 sm:gap-6">
+                        
+                        <div class="flex flex-col p-4 bg-purple-50 rounded-xl border border-purple-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-shirt text-purple-600"></i> Servicing
+                            </span>
+                            <span class="font-bold text-2xl text-purple-700">₹700</span>
+                        </div>
+                        
+                        <div class="flex flex-col p-4 bg-purple-50 rounded-xl border border-purple-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-gears text-slate-500"></i> Spin Motor Repair
+                            </span>
+                            <span class="font-bold text-2xl text-purple-700">₹3000</span>
+                        </div>
+                        
+                        <div class="flex flex-col p-4 bg-purple-50 rounded-xl border border-purple-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-bolt text-yellow-500"></i> Capacitor Change
+                            </span>
+                            <span class="font-bold text-2xl text-purple-700">₹1300</span>
+                        </div>
+
+                        <div class="flex flex-col p-4 bg-purple-50 rounded-xl border border-purple-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-clock text-blue-500"></i> Timer Change
+                            </span>
+                            <span class="font-bold text-2xl text-purple-700">₹155</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div x-show="activeTab === 'fridge'" class="divide-y divide-slate-100" x-cloak>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Gas Charging</span> <span class="font-bold text-brand-600">₹3200</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Timer / Thermal Fuse</span> <span class="font-bold text-brand-600">₹2650</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Fan Motor</span> <span class="font-bold text-brand-600">₹2000</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Relay / OLP</span> <span class="font-bold text-brand-600">₹1100</span></div>
+                <div x-show="activeTab === 'fridge'" class="bg-white rounded-2xl shadow-xl border border-green-100 p-6 lg:p-8 col-span-1 lg:col-span-3" x-cloak>
+                    <h3 class="text-2xl font-display font-bold text-green-600 mb-6 border-b pb-4">Refrigerator & Geyser Services</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 sm:gap-6">
+                        
+                        <div class="flex flex-col p-4 bg-green-50 rounded-xl border border-green-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-fire-extinguisher text-orange-500"></i> Fridge Gas Charging
+                            </span>
+                            <span class="font-bold text-2xl text-green-700">₹3200</span>
+                        </div>
+                        
+                        <div class="flex flex-col p-4 bg-green-50 rounded-xl border border-green-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-microchip text-slate-500"></i> Fridge Timer / Thermal Fuse
+                            </span>
+                            <span class="font-bold text-2xl text-green-700">₹2650</span>
+                        </div>
+                        
+                        <div class="flex flex-col p-4 bg-green-50 rounded-xl border border-green-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-wind text-cyan-500"></i> Fridge Fan Motor
+                            </span>
+                            <span class="font-bold text-2xl text-green-700">₹2000</span>
+                        </div>
+
+                        <div class="flex flex-col p-4 bg-green-50 rounded-xl border border-green-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-bolt text-yellow-500"></i> Fridge Relay / OLP
+                            </span>
+                            <span class="font-bold text-2xl text-green-700">₹1100</span>
+                        </div>
+                        
+                        <div class="flex flex-col p-4 bg-green-50 rounded-xl border border-green-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-plug text-red-600"></i> Geyser Repair
+                            </span>
+                            <span class="font-bold text-2xl text-green-700 text-sm">On Inspection</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div x-show="activeTab === 'pcb'" class="divide-y divide-slate-100" x-cloak>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Inverter AC PCB</span> <span class="text-xs bg-slate-100 px-2 py-1 rounded">On Inspection</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Washing Machine PCB</span> <span class="text-xs bg-slate-100 px-2 py-1 rounded">On Inspection</span></div>
-                    <div class="p-4 flex justify-between hover:bg-slate-50"><span class="font-medium">Geyser Repair</span> <span class="text-xs bg-slate-100 px-2 py-1 rounded">On Inspection</span></div>
+                <div x-show="activeTab === 'pcb'" class="bg-white rounded-2xl shadow-xl border border-orange-100 p-6 lg:p-8 col-span-1 lg:col-span-3" x-cloak>
+                    <h3 class="text-2xl font-display font-bold text-orange-600 mb-6 border-b pb-4">Specialized PCB & Other Services</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 sm:gap-6">
+                        
+                        <div class="flex flex-col p-4 bg-orange-50 rounded-xl border border-orange-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-microchip text-orange-500"></i> Inverter AC PCB Repair
+                            </span>
+                            <span class="font-bold text-xl text-orange-700">
+                                <span class="text-sm bg-orange-100 px-3 py-1 rounded-full font-bold">Quoted After Inspection</span>
+                            </span>
+                        </div>
+                        
+                        <div class="flex flex-col p-4 bg-orange-50 rounded-xl border border-orange-200">
+                            <span class="text-sm font-medium text-slate-700 flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-bolt text-yellow-500"></i> Washing Machine PCB Repair
+                            </span>
+                            <span class="font-bold text-xl text-orange-700">
+                                <span class="text-sm bg-orange-100 px-3 py-1 rounded-full font-bold">Quoted After Inspection</span>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="pt-4 mt-4 border-t border-orange-200">
+                        <p class="text-sm text-slate-500">
+                            <i class="fa-solid fa-shield-alt mr-2 text-orange-500"></i>
+                            PCB repairs are complex, and the cost is determined after a physical inspection of the board's damage.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
     <footer id="contact" class="bg-slate-900 text-slate-400">
         <div class="w-full h-80 grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition duration-500">
             <iframe 
